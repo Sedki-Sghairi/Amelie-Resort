@@ -1,4 +1,4 @@
-import React, { Children, Component } from 'react';
+import React, { Component } from 'react';
 // import items from './data';
 import Client from './Contentful';
 
@@ -28,7 +28,6 @@ class RoomProvider extends Component {
 				// order: 'sys.createdAt'
 				order: '-fields.price'
 			});
-			console.log(response.items);
 			let rooms = this.formatData(response.items);
 			let featuredRooms = rooms.filter((room) => room.featured === true);
 			let maxPrice = Math.max(...rooms.map((item) => item.price));
@@ -76,7 +75,7 @@ class RoomProvider extends Component {
 		);
 	};
 	filterRooms = () => {
-		let { rooms, type, capacity, price, minPrice, maxPrice, minSize, maxSize, breakfast, pets } = this.state;
+		let { rooms, type, capacity, price, minSize, maxSize, breakfast, pets } = this.state;
 		//all rooms
 		let tempRooms = [ ...rooms ];
 		//transform valu
