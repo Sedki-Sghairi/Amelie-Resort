@@ -71,7 +71,7 @@ export default function RoomsFilter({ rooms }) {
 				{/* end price */}
 				{/* size */}
 				<div className="form-group">
-					<label htmlFor="size">room size</label>
+					<label htmlFor="size">room size(sqft)</label>
 					<div className="size-inputs">
 						<input
 							type="number"
